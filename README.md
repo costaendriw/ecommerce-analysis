@@ -169,7 +169,7 @@ xlrd>=2.0.0
 
 ## 👨‍💻 Sobre o Autor
 
-**[Seu Nome]**
+**Endriw Costa**
 - 📧 Email: endriwcosta3@gmail.com
 - 💼 LinkedIn: [linkedin.com/in/endriwcosta](www.linkedin.com/in/endriwcosta)
 - 🌐 Portfolio: [github.com/costaendriw](https://github.com/costaendriw)
@@ -185,7 +185,7 @@ Contribuições são sempre bem-vindas! Para contribuir:
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📊 Resultados Esperados
+## 📊 Resultados do Projeto
 
 Este projeto demonstra:
 - ✅ **Competência Técnica**: Domínio de Python, Pandas e visualização
