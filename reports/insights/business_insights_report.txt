@@ -1,0 +1,41 @@
+================================================================================
+RELATÓRIO COMPLETO DE INSIGHTS DE NEGÓCIO - E-COMMERCE
+================================================================================
+Gerado em: 20/08/2025 00:58:08
+
+📊 MÉTRICAS PRINCIPAIS
+------------------------------
+💰 Receita Total: R$ 12,336,178.13
+🎫 Ticket Médio: R$ 2492.16
+📦 Total de Pedidos: 4,950
+👥 Clientes Únicos: 3,750
+🛍️ Produtos Únicos: 16
+📅 Período: 364 dias
+💵 Receita Diária Média: R$ 33890.60
+
+💡 PRINCIPAIS DESCOBERTAS
+------------------------------
+• Produto 'iPhone 14' representa 14.9% da receita total
+• Categoria 'Notebooks' lidera com 25.8% da receita
+• Canal 'Online' concentra 49.9% das vendas
+
+🚀 OPORTUNIDADES IDENTIFICADAS
+------------------------------
+• Reativar 892 clientes em risco com campanhas direcionadas
+• Baixa concentração geográfica - oportunidade de expansão nacional
+
+⚠️ RISCOS IDENTIFICADOS
+------------------------------
+
+📋 RECOMENDAÇÕES IMEDIATAS
+------------------------------
+• Implementar dashboard de monitoramento em tempo real
+• Configurar alertas para queda de performance em produtos principais
+• Iniciar programa de fidelização para clientes Champions
+
+🎯 RECOMENDAÇÕES MÉDIO PRAZO
+------------------------------
+• Diversificar portfólio de produtos para reduzir concentração
+• Expandir para novos canais de venda
+• Implementar análise preditiva para previsão de demanda
+
