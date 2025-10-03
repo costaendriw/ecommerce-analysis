@@ -305,7 +305,7 @@ Contribuições são sempre bem-vindas! Para contribuir:
 - ✅ Relatórios em PDF/Markdown
 - ✅ Sistema modular de análise
 
-## 📊 Resultados Esperados
+## 📊 Resultados do Projeto
 
 Este projeto demonstra:
 - ✅ **Competência Técnica**: Domínio de Python, Pandas, visualização e web apps
@@ -332,6 +332,4 @@ Este projeto demonstra:
 
 ---
 
-⭐ **Se este projeto foi útil para você, não esqueça de dar uma estrela!**
-
-📧 **Dúvidas ou sugestões?** Entre em contato: endriwcosta3@gmail.com
+⭐ **Se este projeto foi útil para você, não esqueça de dar uma estrela!**@
