@@ -28,6 +28,21 @@ ecommerce-analysis/
 │   ├── processed/              # Dados limpos e processados
 │   └── sample/                 # Dados de exemplo
 │
+├── docs/
+│   └── screenshots/            # Screenshots do dashboard
+│       ├── 01_visao_geral.png
+│       ├── 02_distribuicao.png
+│       ├── 03_insights.png
+│       ├── 05_produtos_graficos.png
+│       ├── 06_produto_destaque.png
+│       ├── 07_categorias.png
+│       ├── 08_categorias_tabela.png
+│       ├── 09_geografia_receita.png
+│       ├── 10_geografia_metricas.png
+│       ├── 11_canais.png
+│       ├── 12_canais_tabela.png
+│       └── 13_clientes.png
+│
 ├── notebooks/
 │   └── analise_vendas_interativa.md  # Template para análise
 │
@@ -169,6 +184,66 @@ Isso executará a análise completa e gerará:
 jupyter notebook notebooks/analise_vendas_interativa.md
 ```
 
+## 📊 Preview do Dashboard
+
+### 🎯 Visão Geral
+Interface principal com métricas em tempo real e análises consolidadas.
+
+![Dashboard - Visão Geral](docs/screenshots/01_visao_geral.png)
+
+### 📊 Distribuições por Categoria e Canal
+Análise visual da distribuição de receita por categoria e canal de vendas.
+
+![Dashboard - Distribuições](docs/screenshots/02_distribuicao.png)
+
+### 💡 Insights Estratégicos
+Sistema automatizado de geração de insights, oportunidades e recomendações.
+
+![Dashboard - Insights](docs/screenshots/03_insights.png)
+
+### 🏆 Análise de Produtos
+Ranking completo dos produtos mais vendidos por receita e volume.
+
+![Dashboard - Produtos](docs/screenshots/05_produtos_graficos.png)
+
+**Produto em Destaque:**
+
+![Dashboard - Produto Destaque](docs/screenshots/06_produto_destaque.png)
+
+### 📂 Análise de Categorias
+Performance detalhada de cada categoria com métricas comparativas.
+
+![Dashboard - Categorias](docs/screenshots/07_categorias.png)
+
+**Detalhamento por Categoria:**
+
+![Dashboard - Tabela Categorias](docs/screenshots/08_categorias_tabela.png)
+
+### 🗺️ Análise Geográfica
+Distribuição de vendas por estado e análise regional.
+
+![Dashboard - Geografia](docs/screenshots/09_geografia_receita.png)
+
+**Métricas por Estado:**
+
+![Dashboard - Geografia Métricas](docs/screenshots/10_geografia_metricas.png)
+
+### 📱 Análise de Canais
+Performance comparativa entre canais de venda (Online, Marketplace, App Mobile).
+
+![Dashboard - Canais](docs/screenshots/11_canais.png)
+
+**Performance Detalhada:**
+
+![Dashboard - Canais Tabela](docs/screenshots/12_canais_tabela.png)
+
+### 👥 Segmentação de Clientes (RFV)
+Análise completa baseada em Recência, Frequência e Valor com segmentação automática.
+
+![Dashboard - Clientes](docs/screenshots/13_clientes.png)
+
+---
+
 ## 📋 Requirements
 
 ```txt
@@ -205,13 +280,24 @@ streamlit>=1.28.0
 
 ## 📊 Visualizações Disponíveis
 
-### Dashboard Executivo
-- KPIs principais em tempo real
-- Evolução temporal da receita
-- Top produtos e categorias
-- Análise geográfica
-- Performance por canal
-- Análise sazonal
+### Dashboard Interativo (Streamlit)
+**Funcionalidades:**
+- ✅ **Interface intuitiva** com sidebar de configurações
+- ✅ **Dados simulados** ou upload de arquivos próprios
+- ✅ **Filtros dinâmicos** por categoria, canal e período
+- ✅ **6 abas de análise** completamente interativas
+- ✅ **Gráficos Plotly** com zoom, hover e exportação
+- ✅ **Insights automáticos** gerados pela IA de análise
+- ✅ **Exportação** de dados em CSV, Excel e relatórios
+- ✅ **Métricas em tempo real** atualizadas dinamicamente
+
+**Abas disponíveis:**
+1. 📊 **Visão Geral**: KPIs principais e evolução temporal
+2. 🏆 **Produtos**: Ranking e análise de performance
+3. 📂 **Categorias**: Comparativo entre categorias
+4. 🗺️ **Geografia**: Distribuição por estados
+5. 📱 **Canais**: Performance por canal de venda
+6. 👥 **Clientes**: Segmentação RFV e comportamento
 
 ### Gráficos Estáticos (Matplotlib/Seaborn)
 - Evolução da receita (diária/semanal/mensal/trimestral)
@@ -279,6 +365,9 @@ streamlit>=1.28.0
 
 Cientista de Dados com foco em análise exploratória, visualização de dados e geração de insights de negócio.
 
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 ## 🤝 Contribuições
 
@@ -332,4 +421,6 @@ Este projeto demonstra:
 
 ---
 
-⭐ **Se este projeto foi útil para você, não esqueça de dar uma estrela!**@
+⭐ **Se este projeto foi útil para você, não esqueça de dar uma estrela!**
+
+📧 **Dúvidas ou sugestões?** Entre em contato: endriwcosta3@gmail.com

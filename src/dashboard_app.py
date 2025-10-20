@@ -28,18 +28,6 @@ st.markdown("""
         text-align: center;
         padding: 1rem 0;
     }
-    .metric-card {
-        background-color: #f0f2f6;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-left: 4px solid #2E86AB;
-    }
-    .insight-box {
-        background-color: #e8f4f8;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin: 0.5rem 0;
-    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -254,6 +242,17 @@ try:
                     names='canal_venda',
                     title='Receita por Canal'
                 )
+                fig.update_layout(
+                    height=400,
+                    showlegend=True,
+                    legend=dict(
+                        orientation="h",
+                        yanchor="bottom",
+                        y=-0.2,
+                        xanchor="center",
+                        x=0.5
+                    )
+                )
                 st.plotly_chart(fig, use_container_width=True)
     
     with tab2:
@@ -271,14 +270,26 @@ try:
                 df_top = pd.DataFrame(list(top_receita.items()), columns=['Produto', 'Receita'])
                 df_top = df_top.sort_values('Receita', ascending=False).head(10)
                 
+                # Truncar nomes longos
+                df_top['Produto_Display'] = df_top['Produto'].apply(
+                    lambda x: x[:30] + '...' if len(x) > 30 else x
+                )
+                
                 fig = px.bar(
                     df_top,
-                    y='Produto',
+                    y='Produto_Display',
                     x='Receita',
                     orientation='h',
-                    title='Top 10 Produtos'
+                    title='Top 10 Produtos',
+                    hover_data={'Produto': True, 'Produto_Display': False}
                 )
                 fig.update_traces(marker_color='#2E86AB')
+                fig.update_layout(
+                    height=500,
+                    margin=dict(l=200, r=20, t=40, b=40),
+                    yaxis_title="",
+                    xaxis_title="Receita (R$)"
+                )
                 st.plotly_chart(fig, use_container_width=True)
         
         with col2:
@@ -288,27 +299,39 @@ try:
                 df_top_qtd = pd.DataFrame(list(top_qtd.items()), columns=['Produto', 'Quantidade'])
                 df_top_qtd = df_top_qtd.sort_values('Quantidade', ascending=False).head(10)
                 
+                # Truncar nomes longos
+                df_top_qtd['Produto_Display'] = df_top_qtd['Produto'].apply(
+                    lambda x: x[:30] + '...' if len(x) > 30 else x
+                )
+                
                 fig = px.bar(
                     df_top_qtd,
-                    y='Produto',
+                    y='Produto_Display',
                     x='Quantidade',
                     orientation='h',
-                    title='Top 10 por Volume'
+                    title='Top 10 por Volume',
+                    hover_data={'Produto': True, 'Produto_Display': False}
                 )
                 fig.update_traces(marker_color='#A23B72')
+                fig.update_layout(
+                    height=500,
+                    margin=dict(l=200, r=20, t=40, b=40),
+                    yaxis_title="",
+                    xaxis_title="Quantidade"
+                )
                 st.plotly_chart(fig, use_container_width=True)
         
         # Produto destaque
         destaque = produtos_insights.get('produto_destaque', {})
         if destaque:
-            st.markdown(f"""
-            <div class="insight-box">
-                <h4>⭐ Produto Destaque</h4>
-                <p><strong>{destaque.get('nome', 'N/A')}</strong></p>
-                <p>Receita: R$ {destaque.get('receita', 0):,.2f}</p>
-                <p>Participação: {destaque.get('participacao_receita', 0):.1f}% da receita total</p>
-            </div>
-            """, unsafe_allow_html=True)
+            st.info(f"""
+**⭐ Produto Destaque**
+
+**{destaque.get('nome', 'N/A')}**
+
+• Receita: R$ {destaque.get('receita', 0):,.2f}  
+• Participação: {destaque.get('participacao_receita', 0):.1f}% da receita total
+            """)
     
     with tab3:
         st.subheader("📂 Análise de Categorias")
@@ -353,7 +376,7 @@ try:
             df_geo = pd.DataFrame(performance_estados).T
             df_geo = df_geo.sort_values('receita_total', ascending=False)
             
-            # Mapa de calor
+            # Mapa de receita por estado
             fig = px.bar(
                 df_geo.reset_index().head(10),
                 x='index',
@@ -362,6 +385,10 @@ try:
                 labels={'index': 'Estado', 'receita_total': 'Receita (R$)'}
             )
             fig.update_traces(marker_color='#C73E1D')
+            fig.update_layout(
+                height=400,
+                xaxis_tickangle=-45
+            )
             st.plotly_chart(fig, use_container_width=True)
             
             # Métricas por estado
@@ -375,6 +402,7 @@ try:
                     title='Ticket Médio por Estado',
                     labels={'index': 'Estado', 'ticket_medio': 'Ticket Médio (R$)'}
                 )
+                fig.update_layout(xaxis_tickangle=-45, height=400)
                 st.plotly_chart(fig, use_container_width=True)
             
             with col2:
@@ -385,6 +413,7 @@ try:
                     title='Clientes Únicos por Estado',
                     labels={'index': 'Estado', 'clientes_unicos': 'Clientes'}
                 )
+                fig.update_layout(xaxis_tickangle=-45, height=400)
                 st.plotly_chart(fig, use_container_width=True)
     
     with tab5:
